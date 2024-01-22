@@ -44,4 +44,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Copyright
 
-© 2024 4trodev. All rights reserved.
+© 2024 [@4trodev](https://www.4trodev.com/links). All rights reserved.

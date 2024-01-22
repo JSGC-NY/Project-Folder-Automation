@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 20px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+      }
+
+      input[type="button"] {
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color: #45a049;
+      }
+
+      p {
+        color: #666;
+      }
+
+      a {
+        color: #3498db;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Project Folder Creator</h2>
+    <form>
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="location" required><br>
+      
+      <label for="clientName">Client Name:</label>
+      <input type="text" id="clientName" name="clientName" required><br>
+      
+      <label for="clientEmail">Client Email:</label>
+      <input type="email" id="clientEmail" name="clientEmail" required><br>
+      
+      <input type="button" value="Create Folders" onclick="createFolders()">
+    </form>
+
+    <p>Need help? Check out the <a href="https://example.com" target="_blank">instructions</a>.</p>
+
+<script>
+  function createFolders() {
+    var location = document.getElementById("location").value;
+    var clientName = document.getElementById("clientName").value;
+    var clientEmail = document.getElementById("clientEmail").value;
+
+    google.script.run.createProjectFolders(location, clientName, clientEmail);
+    alert("Request sent. Folders will be created shortly.");
+
+    // Clear the input boxes
+    document.getElementById("location").value = "";
+    document.getElementById("clientName").value = "";
+    document.getElementById("clientEmail").value = "";
+  }
+</script>
+  </body>
+</html>
